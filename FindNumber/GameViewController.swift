@@ -14,8 +14,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var rightDigit: UILabel!
     @IBOutlet weak var gameStatus: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var newGame: UIButton!
     
-    lazy var game = Game(countItems: digitButtons.count)
+    lazy var game = Game(countItems: digitButtons.count, gameTime: 40) {[weak self] (status, gameTime) in
+        guard let self = self else {return}
+        self.timerLabel.text = gameTime.secondsToTimeString()
+        self.updateGameInfo(with: status)
+    }
     
     // MARK: - Lifecycle
 
@@ -31,12 +36,14 @@ class GameViewController: UIViewController {
         guard let buttonIndex = digitButtons.firstIndex(of: sender) else {return}
         game.check(buttonIndex)
         updateGameScreen()
-        sender.isHidden = true
-        print(sender.tag)
     }
+    @IBAction func newGameButton(_ sender: Any) {
+    }
+    
+    
     // MARK: - Methods
     
-    func setupGameScreen(){
+    private func setupGameScreen(){
         for i in game.items.indices {
             digitButtons[i].setTitle(game.items[i].title, for: .normal)
             digitButtons[i].isHidden = false
@@ -44,18 +51,39 @@ class GameViewController: UIViewController {
         rightDigit.text = game.rightItem?.title
     }
     
-    func updateGameScreen(){
+    private func updateGameScreen(){
         for i in game.items.indices {
             digitButtons[i].isHidden = game.items[i].isFound
+            if game.items[i].isWrong {
+                UIView.animate(withDuration: 0.4){ [weak self] in
+                    self?.digitButtons[i].backgroundColor = .red
+                } completion: {[weak self] (_) in
+                    self?.digitButtons[i].backgroundColor = UIColor.init(named: "customColor")
+                    self?.game.items[i].isWrong = false
+                }
+            }
         }
         rightDigit.text = game.rightItem?.title
-        if game.status == .winner{
+        updateGameInfo(with: game.status)
+    }
+    
+    
+    private func updateGameInfo(with status:GameStatus){
+        switch status {
+        case .start:
+            gameStatus.text = "Game is started"
+            gameStatus.textColor = .black
+
+        case .winner:
             gameStatus.text = "You are winner!!"
             gameStatus.textColor = .green
-            
+
+        case .loser:
+            gameStatus.text = "You are lose!!"
+            gameStatus.textColor = .red
+
         }
     }
-
     
 
 }
