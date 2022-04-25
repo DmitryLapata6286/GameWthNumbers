@@ -29,5 +29,16 @@ class YellowViewController: UIViewController {
     
     // MARK: - Navigation
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "goToBlue":
+            if let blueVC = segue.destination as? BlueViewController{
+                blueVC.varForTransferLabel = "transferred text"
+            }
+            break
+        
+        default:
+            break
+        }
+    }
 }

@@ -9,12 +9,14 @@ import UIKit
 
 class BlueViewController: UIViewController {
     // MARK: - Outlets
+    @IBOutlet weak var getDataLabel: UILabel!
     
+    var varForTransferLabel = ""
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getDataLabel.text = varForTransferLabel
         // Do any additional setup after loading the view.
     }
     // MARK: - Actions

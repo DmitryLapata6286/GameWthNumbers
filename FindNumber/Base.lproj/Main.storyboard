@@ -49,9 +49,18 @@
         <scene sceneID="U5e-en-nCV">
             <objects>
                 <viewController id="TuM-NS-y5g" customClass="BlueViewController" customModule="FindNumber" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ekk-77-cBK">
+                    <view key="view" contentMode="scaleToFill" id="Ekk-77-cBK" customClass="UILabel">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNQ-5z-1AR">
+                                <rect key="frame" x="54" y="254" width="281" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ri2-MV-WIE"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                     </view>
@@ -62,25 +71,42 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="getDataLabel" destination="NNQ-5z-1AR" id="mmS-IU-3iN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0h-BN-rgm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="42" y="-719"/>
+            <point key="canvasLocation" x="41.53846153846154" y="-719.43127962085305"/>
         </scene>
-        <!--View Controller-->
+        <!--Green View Controller-->
         <scene sceneID="0ek-Wk-jw1">
             <objects>
-                <viewController storyboardIdentifier="greenVC" id="q1a-6S-gGb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="N8D-Vd-gIf">
+                <viewController storyboardIdentifier="greenVC" id="q1a-6S-gGb" customClass="GreenViewController" customModule="FindNumber" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N8D-Vd-gIf" customClass="Green">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVl-6V-bMH">
+                                <rect key="frame" x="106" y="385" width="179" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="to Yellow View">
+                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToRoot:" destination="q1a-6S-gGb" eventType="touchUpInside" id="hzE-Lt-ZSi"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="pZn-tb-dT4"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofh-L6-wad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="914" y="-719"/>
+            <point key="canvasLocation" x="913.84615384615381" y="-719.43127962085305"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="HyT-gs-YAc">
