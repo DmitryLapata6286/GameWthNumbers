@@ -8,7 +8,8 @@
 import UIKit
 
 class GreenViewController: UIViewController {
-
+    var variableForMessage = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -33,7 +33,9 @@ class YellowViewController: UIViewController {
         switch segue.identifier {
         case "goToBlue":
             if let blueVC = segue.destination as? BlueViewController{
-                blueVC.varForTransferLabel = "transferred text"
+                if let transfer = sender as? String{
+                    blueVC.varForTransferLabel = transfer
+                }
             }
             break
         
