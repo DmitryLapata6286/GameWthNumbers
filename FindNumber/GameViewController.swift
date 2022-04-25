@@ -53,7 +53,10 @@ class GameViewController: UIViewController {
     
     private func updateGameScreen(){
         for i in game.items.indices {
-            digitButtons[i].isHidden = game.items[i].isFound
+            //digitButtons[i].isHidden = game.items[i].isFound          //Not hidden, just opacity
+            digitButtons[i].alpha = game.items[i].isFound ? 0 : 1
+            digitButtons[i].isEnabled = !game.items[i].isFound
+
             if game.items[i].isWrong {
                 UIView.animate(withDuration: 0.4){ [weak self] in
                     self?.digitButtons[i].backgroundColor = .red

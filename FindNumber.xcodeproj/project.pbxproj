@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD5CA7C5281706E6009464D4 /* YellowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5CA7C4281706E6009464D4 /* YellowViewController.swift */; };
+		FD5CA7C728170FE5009464D4 /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5CA7C628170FE5009464D4 /* BlueViewController.swift */; };
 		FDB4C9D9281576B200581A98 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4C9D8281576B200581A98 /* GameViewController.swift */; };
 		FDB4C9DB28157E6300581A98 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB4C9DA28157E6300581A98 /* Game.swift */; };
 		FDC4EA1927F467D000AE4A5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC4EA1827F467D000AE4A5F /* AppDelegate.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD5CA7C4281706E6009464D4 /* YellowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowViewController.swift; sourceTree = "<group>"; };
+		FD5CA7C628170FE5009464D4 /* BlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueViewController.swift; sourceTree = "<group>"; };
 		FDB4C9D8281576B200581A98 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		FDB4C9DA28157E6300581A98 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FDC4EA1527F467D000AE4A5F /* FindNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +67,8 @@
 				FDC4EA2627F467D300AE4A5F /* Info.plist */,
 				FDB4C9D8281576B200581A98 /* GameViewController.swift */,
 				FDB4C9DA28157E6300581A98 /* Game.swift */,
+				FD5CA7C4281706E6009464D4 /* YellowViewController.swift */,
+				FD5CA7C628170FE5009464D4 /* BlueViewController.swift */,
 			);
 			path = FindNumber;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD5CA7C5281706E6009464D4 /* YellowViewController.swift in Sources */,
 				FDB4C9D9281576B200581A98 /* GameViewController.swift in Sources */,
 				FDB4C9DB28157E6300581A98 /* Game.swift in Sources */,
+				FD5CA7C728170FE5009464D4 /* BlueViewController.swift in Sources */,
 				FDC4EA1927F467D000AE4A5F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
