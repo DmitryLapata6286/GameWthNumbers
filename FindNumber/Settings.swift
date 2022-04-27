@@ -19,7 +19,7 @@ struct GameSettings: Codable {
 class Settings {
     static var shared = Settings()
     
-    let defaultSettings = GameSettings(timerState: true, gameDuration: 40)
+    private let defaultSettings = GameSettings(timerState: true, gameDuration: 40)
     
     var currentSettings: GameSettings{
         get{
@@ -30,6 +30,7 @@ class Settings {
                     UserDefaults.standard.setValue(data, forKey: KeysUserDefaults.settingsGame)
                 }
                 return defaultSettings
+            }
         }
         set{
 //            do{
@@ -42,5 +43,9 @@ class Settings {
                 UserDefaults.standard.setValue(data, forKey: KeysUserDefaults.settingsGame)
             }
         }
+    }
+    
+    func resetSettings (){
+        currentSettings = defaultSettings
     }
 }

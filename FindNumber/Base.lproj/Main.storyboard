@@ -432,6 +432,9 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="Go to Default Settings"/>
+                                                    <connections>
+                                                        <action selector="setDefaultSettings:" destination="u0a-fB-jiD" eventType="touchUpInside" id="Dq5-2Q-f67"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -450,6 +453,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="E9d-4a-0as"/>
                     <connections>
+                        <outlet property="durationGameLabel" destination="o5l-2i-ER2" id="3fh-05-zMC"/>
                         <outlet property="timerSwitcher" destination="1GL-Na-0m3" id="28c-jf-kkp"/>
                     </connections>
                 </tableViewController>

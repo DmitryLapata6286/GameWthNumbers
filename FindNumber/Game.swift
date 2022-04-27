@@ -48,9 +48,9 @@ class Game {
     
     private var updateTimer:(GameStatus, Int)->()
     
-    init(countItems: Int, gameTime: Int, updateTimer: @escaping (_ status:GameStatus, _ secs: Int) -> ()){
+    init(countItems: Int, updateTimer: @escaping (_ status:GameStatus, _ secs: Int) -> ()){
         self.countItems = countItems
-        self.secondsGame = gameTime
+        self.secondsGame = Settings.shared.currentSettings.gameDuration
         self.updateTimer = updateTimer
         setupGame()
     }
@@ -65,10 +65,13 @@ class Game {
         rightItem = items.shuffled().first
         updateTimer(status, secondsGame)
         
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {[weak self] (_) in
-            self?.secondsGame -= 1
-            
-        })
+        
+        if Settings.shared.currentSettings.timerState{
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {[weak self] (_) in
+                self?.secondsGame -= 1
+                
+            })
+        }
     }
     func check(_ i:Int){
         guard status == .start else {return}

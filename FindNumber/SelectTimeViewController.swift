@@ -45,6 +45,6 @@ extension SelectTimeViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectTimetableView.deselectRow(at: indexPath, animated: true)
         Settings.shared.currentSettings.gameDuration = data[indexPath.row]
-        navigationController?.popToViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }

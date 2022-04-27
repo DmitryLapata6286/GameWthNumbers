@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var newGame: UIButton!
     
-    lazy var game = Game(countItems: digitButtons.count, gameTime: 40) {[weak self] (status, gameTime) in
+    lazy var game = Game(countItems: digitButtons.count) {[weak self] (status, gameTime) in
         guard let self = self else {return}
         self.timerLabel.text = gameTime.secondsToTimeString()
         self.updateGameInfo(with: status)
@@ -28,6 +28,10 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         setupGameScreen()
         // Do any additional setup after loading the view.
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        game.endGame()
     }
     
     // MARK: - Actions

@@ -10,18 +10,33 @@ import UIKit
 class SettingsTableTableViewController: UITableViewController {
     // MARK: - Outlets
     @IBOutlet weak var timerSwitcher: UISwitch!
+    @IBOutlet weak var durationGameLabel: UILabel!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadSettings()
+    }
+    
     // MARK: - Actions
     @IBAction func changeTimerState(_ sender: UISwitch) {
         Settings.shared.currentSettings.timerState = sender.isOn
     }
+    @IBAction func setDefaultSettings(_ sender: Any) {
+        Settings.shared.resetSettings()
+        loadSettings()
+    }
     
     // MARK: - Methods
+    
+    func loadSettings (){
+        durationGameLabel.text = "\(Settings.shared.currentSettings.gameDuration) sec"
+        timerSwitcher.isOn = Settings.shared.currentSettings.timerState
+    }
     
     // MARK: - Segues
     
