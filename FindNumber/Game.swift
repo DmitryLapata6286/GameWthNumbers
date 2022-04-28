@@ -23,12 +23,22 @@ class Game {
     }
     
     private let data: [Int] = Array(1...99)
-    
+    var isNewRecord: Bool = false
     var items: [Item] = []
     var rightItem:Item?
     var status:GameStatus = .start{
         didSet{
             if status != .start {
+                if status == .winner {
+                    let newRecord = timeForGame - secondsGame
+                    
+                    let record = UserDefaults.standard.integer(forKey: KeysUserDefaults.recordGame)
+                    
+                    if record == 0 || newRecord < record {
+                        UserDefaults.standard.setValue(newRecord, forKey: KeysUserDefaults.recordGame)
+                        isNewRecord = true
+                    }
+                }
                 endGame()
             }
         }
@@ -46,17 +56,21 @@ class Game {
     }
     private var timer: Timer?
     
+    private var timeForGame: Int
+    
     private var updateTimer:(GameStatus, Int)->()
     
     init(countItems: Int, updateTimer: @escaping (_ status:GameStatus, _ secs: Int) -> ()){
         self.countItems = countItems
-        self.secondsGame = Settings.shared.currentSettings.gameDuration
+        self.timeForGame = Settings.shared.currentSettings.gameDuration
+        self.secondsGame = self.timeForGame
         self.updateTimer = updateTimer
         setupGame()
     }
     
     func setupGame() {
         var digits = data.shuffled()
+        isNewRecord = false
         items.removeAll()
         while items.count < countItems {
             let item = Item(title: String(digits.removeFirst()))

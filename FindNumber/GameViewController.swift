@@ -84,13 +84,51 @@ class GameViewController: UIViewController {
         case .winner:
             gameStatus.text = "You are winner!!"
             gameStatus.textColor = .green
-
+            if game.isNewRecord {
+                showAlertRecord()
+            }else{
+                showAlert()
+            }
         case .loser:
             gameStatus.text = "You are lose!!"
             gameStatus.textColor = .red
-
+            showAlert()
         }
     }
-    
+    private func showAlertRecord(){
+        let alert = UIAlertController(title: "Condratulations!", message: "New Record!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        // for iPad
+        if let popover = alert.popoverPresentationController {
+            popover.sourceView = self.view
+            popover.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popover.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0)
+        }
+        present(alert, animated: true, completion: nil)
+    }
+    private func showAlert(){
+        let alert = UIAlertController(title: "Do u wanna play again?", message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Yeah!", style: .default){[weak self](_) in
+            self?.game.newGame()
+            self?.setupGameScreen()
+        })
+        alert.addAction(UIAlertAction(title: "Show record!", style: .default){[weak self] (_) in
+            // TODO: - recordVC
+        })
+        alert.addAction(UIAlertAction(title: "Nope.", style: .destructive){[weak self](_) in
+            self?.navigationController?.popViewController(animated: true)
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        // for iPad
+        if let popover = alert.popoverPresentationController {
+            popover.sourceView = self.view
+            popover.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popover.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0)
+        }
+        
+        present(alert, animated: true)
+    }
 
 }
