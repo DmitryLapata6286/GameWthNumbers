@@ -16,6 +16,7 @@
 		FDC4EA2527F467D300AE4A5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC4EA2327F467D300AE4A5F /* LaunchScreen.storyboard */; };
 		FDC9D4CA2817D224005DA2DD /* SelectTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC9D4C92817D224005DA2DD /* SelectTimeViewController.swift */; };
 		FDC9D4CC2817D28D005DA2DD /* SettingsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC9D4CB2817D28D005DA2DD /* SettingsTableTableViewController.swift */; };
+		FDDF7B1F282308B700D7A85E /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF7B1E282308B700D7A85E /* RecordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FDC4EA2627F467D300AE4A5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDC9D4C92817D224005DA2DD /* SelectTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeViewController.swift; sourceTree = "<group>"; };
 		FDC9D4CB2817D28D005DA2DD /* SettingsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableTableViewController.swift; sourceTree = "<group>"; };
+		FDDF7B1E282308B700D7A85E /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				FDC9D4C92817D224005DA2DD /* SelectTimeViewController.swift */,
 				FDC9D4CB2817D28D005DA2DD /* SettingsTableTableViewController.swift */,
 				FDAD2C4C281882CE00739677 /* Settings.swift */,
+				FDDF7B1E282308B700D7A85E /* RecordViewController.swift */,
 			);
 			path = FindNumber;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 				FDAD2C4D281882CE00739677 /* Settings.swift in Sources */,
 				FDB4C9D9281576B200581A98 /* GameViewController.swift in Sources */,
 				FDC9D4CC2817D28D005DA2DD /* SettingsTableTableViewController.swift in Sources */,
+				FDDF7B1F282308B700D7A85E /* RecordViewController.swift in Sources */,
 				FDB4C9DB28157E6300581A98 /* Game.swift in Sources */,
 				FDC4EA1927F467D000AE4A5F /* AppDelegate.swift in Sources */,
 				FDC9D4CA2817D224005DA2DD /* SelectTimeViewController.swift in Sources */,

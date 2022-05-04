@@ -45,7 +45,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Record"/>
                                         <connections>
-                                            <segue destination="gnA-1B-2Aq" kind="show" id="VxS-pW-EIZ"/>
+                                            <segue destination="gnA-1B-2Aq" kind="presentation" id="VxS-pW-EIZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -514,18 +514,33 @@
         <!--Best time-->
         <scene sceneID="vFs-gt-039">
             <objects>
-                <viewController id="gnA-1B-2Aq" sceneMemberID="viewController">
+                <viewController id="gnA-1B-2Aq" customClass="RecordViewController" customModule="FindNumber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LRz-BL-Jvc">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w01-Ju-kNK">
+                                <rect key="frame" x="156.66666666666666" y="399" width="76.666666666666657" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Mc6-7D-UKg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="w01-Ju-kNK" firstAttribute="centerY" secondItem="Mc6-7D-UKg" secondAttribute="centerY" id="3fN-6I-5lb"/>
+                            <constraint firstItem="w01-Ju-kNK" firstAttribute="centerX" secondItem="Mc6-7D-UKg" secondAttribute="centerX" id="5YB-tk-BYH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Best time" id="0A6-vH-4Db"/>
+                    <connections>
+                        <outlet property="recordTitle" destination="w01-Ju-kNK" id="vbg-pu-nk2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xL3-uM-1GF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="741"/>
+            <point key="canvasLocation" x="1107.6923076923076" y="740.75829383886253"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SfX-uh-VCv">
@@ -561,6 +576,9 @@
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
