@@ -341,11 +341,12 @@
                         <outletCollection property="digitButtons" destination="agW-X6-uDd" collectionClass="NSMutableArray" id="OwA-MR-QpM"/>
                         <outletCollection property="digitButtons" destination="vgo-Bb-4GF" collectionClass="NSMutableArray" id="Kwb-d0-R3l"/>
                         <outletCollection property="digitButtons" destination="AhS-uu-aGr" collectionClass="NSMutableArray" id="fTO-DJ-JDw"/>
+                        <segue destination="gnA-1B-2Aq" kind="presentation" identifier="recordVC" id="Qsi-Xl-9is"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3U-er-bet" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109" y="-732"/>
+            <point key="canvasLocation" x="1108" y="6"/>
         </scene>
         <!--Settings-->
         <scene sceneID="ZKq-f5-8fB">
@@ -459,7 +460,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilk-lh-Zhp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1107.6923076923076" y="5.6872037914691944"/>
+            <point key="canvasLocation" x="1108" y="-742"/>
         </scene>
         <!--Select Time View Controller-->
         <scene sceneID="XhI-VZ-hqj">
@@ -509,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WoK-Jf-PKJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2076.9230769230767" y="5.6872037914691944"/>
+            <point key="canvasLocation" x="1982" y="-742"/>
         </scene>
         <!--Best time-->
         <scene sceneID="vFs-gt-039">
@@ -542,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xL3-uM-1GF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1107.6923076923076" y="740.75829383886253"/>
+            <point key="canvasLocation" x="1108" y="846"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SfX-uh-VCv">
@@ -566,6 +567,9 @@
             <point key="canvasLocation" x="-835.38461538461536" y="5.6872037914691944"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qsi-Xl-9is"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="customColor">
             <color red="1" green="0.4050000011920929" blue="0.76399999856948853" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

@@ -113,12 +113,15 @@ class GameViewController: UIViewController {
             self?.game.newGame()
             self?.setupGameScreen()
         })
+        
         alert.addAction(UIAlertAction(title: "Show record!", style: .default){[weak self] (_) in
-            // TODO: - recordVC
+            self?.performSegue(withIdentifier: "recordVC", sender: nil)
         })
+        
         alert.addAction(UIAlertAction(title: "Nope.", style: .destructive){[weak self](_) in
             self?.navigationController?.popViewController(animated: true)
         })
+        
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         // for iPad
